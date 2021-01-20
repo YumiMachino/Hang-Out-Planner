@@ -36,7 +36,8 @@ class PlanListTableViewController: UITableViewController {
     navigationController?.navigationBar.prefersLargeTitles = true
     title = "Your Plans"
     tableView.register(PlanCardTVCell.self, forCellReuseIdentifier: cellId)
-   print(plans)
+//    tableView.rowHeight = UITableView.automaticDimension
+//    tableView.estimatedRowHeight = 200
   }
   
   init(plans: [Plan]) {
@@ -57,14 +58,18 @@ class PlanListTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->    Int {
         //  a row for total time + number of Route
-        return plans[section].routes.count + 1
+        return 1
   }
   
-  
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+
+    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
    let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PlanCardTVCell
-    cell.CellIndexPath = indexPath
+
     
     switch indexPath.section {
     case 0:
