@@ -68,29 +68,24 @@ class PlanListTableViewController: UITableViewController {
     
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-   let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PlanCardTVCell
-
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PlanCardTVCell
+        
     cell.locationField.numberOfLines = 0
-    switch indexPath.section {
-    case 0:
+    cell.locationField.lineBreakMode = .byWordWrapping
+    
         let plan = plans[indexPath.section]
         cell.update(with: plan)
+        
         return cell
-
-    case 1:
-        let plan = plans[indexPath.section]
-        cell.update(with: plan)
-        return cell
-    case 2:
-        let plan = plans[indexPath.section]
-        cell.update(with: plan)
-        return cell
-    default:
-        fatalError("DequeReusable cell error")
-    }
-
  
    }
+  
+  // Cell Select -> move to PlanDetailVC
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let planDetailVC = PlanDetailViewController(plan: plans[indexPath.section])
+    navigationController?.pushViewController(planDetailVC, animated: true)
+    print("Section \(indexPath.section), plan: \(plans[indexPath.section])")
+  }
    
   
 }

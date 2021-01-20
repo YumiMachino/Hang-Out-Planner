@@ -10,9 +10,9 @@ import UIKit
 
 class PlanCardTVCell: CardTVCell {
     
-    var totalTimelb = TextLabel(text: "")
+    var totalTimelb = SubTextLabel(text: "")
     var totalTimeField = SmallHeaderLabel(text: "")
-    var locationlb =  TextLabel(text: "")
+    var locationlb =  SubTextLabel(text: "")
     var locationField = TextLabel(text: "")
   
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -20,6 +20,7 @@ class PlanCardTVCell: CardTVCell {
         
         let totalTimeStack = HorizontalStackView(arrangedSubviews: [totalTimelb, totalTimeField], spacing: 5, alignment: .fill, distribution: .fillEqually)
         let locationStack = HorizontalStackView(arrangedSubviews: [locationlb, locationField], spacing: 5, alignment: .fill, distribution: .fillEqually)
+  
         locationField.numberOfLines = 0
         locationField.sizeToFit()
         
@@ -30,11 +31,12 @@ class PlanCardTVCell: CardTVCell {
         locationStack.matchLeadingTrailing()
         locationStack.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.7).isActive = true
 //        locationStack.setContentHuggingPriority(.required, for: .vertical)
-        locationStack.backgroundColor = .yellow
+      locationlb.setContentHuggingPriority(.required, for: .horizontal)
+//        locationStack.backgroundColor = .yellow
 //        totalTimeStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        totalTimeStack.backgroundColor = .orange
+//        totalTimeStack.backgroundColor = .orange
         vStackView.matchParent()
-        self.backgroundColor = .systemGray
+        self.backgroundColor = .systemGroupedBackground
 
   }
   
@@ -56,8 +58,8 @@ class PlanCardTVCell: CardTVCell {
         }
         locationlb.text = "Place to go: "
         for route in plan.routes {
-            locationField.text = "\(checkLocationName(id: route.startLocationId))"
-            print("\(checkLocationName(id: route.startLocationId))")
+          locationField.text = "\(PlanCardTVCell.checkLocationName(id: route.startLocationId))"
+          print("\(PlanCardTVCell.checkLocationName(id: route.startLocationId))")
         }
     }
     
@@ -72,7 +74,7 @@ class PlanCardTVCell: CardTVCell {
     }
     
     // Return Location title by location id
-    func checkLocationName(id: Int) -> String {
+    static func checkLocationName(id: Int) -> String {
         var locationName = ""
         for location in Location.sampleLocations {
             if location.id == id {

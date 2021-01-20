@@ -53,6 +53,7 @@
 		48A4C69825B558AF00264AF9 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A4C69725B558AF00264AF9 /* Plan.swift */; };
 		48A4C6A025B559E700264AF9 /* Planner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A4C69F25B559E700264AF9 /* Planner.swift */; };
 		48D4876425B5836800EA55D6 /* BasicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D4876325B5836800EA55D6 /* BasicLabel.swift */; };
+		AE45441D25B8D0A300649B4A /* LocationCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45441C25B8D0A300649B4A /* LocationCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		48A4C69725B558AF00264AF9 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		48A4C69F25B559E700264AF9 /* Planner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planner.swift; sourceTree = "<group>"; };
 		48D4876325B5836800EA55D6 /* BasicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicLabel.swift; sourceTree = "<group>"; };
+		AE45441C25B8D0A300649B4A /* LocationCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				48A4C61625B5546C00264AF9 /* CategoryCardTVCell.swift */,
 				48A4C62525B554AB00264AF9 /* DistanceCardTVCell.swift */,
 				48A4C61B25B5548000264AF9 /* PlanCardTVCell.swift */,
+				AE45441C25B8D0A300649B4A /* LocationCardCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				48A4C66E25B5574A00264AF9 /* UILabel+LineSpacing.swift in Sources */,
 				48A4C66D25B5574A00264AF9 /* VerticalStackView.swift in Sources */,
 				48A4C5E825B552CA00264AF9 /* LocationDetailViewController.swift in Sources */,
+				AE45441D25B8D0A300649B4A /* LocationCardCell.swift in Sources */,
 				48A4C69325B5589C00264AF9 /* Route.swift in Sources */,
 				48A4C60C25B553E100264AF9 /* CardTVCell.swift in Sources */,
 				48A4C62625B554AB00264AF9 /* DistanceCardTVCell.swift in Sources */,
