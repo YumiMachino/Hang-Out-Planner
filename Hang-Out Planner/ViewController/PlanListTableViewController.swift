@@ -70,7 +70,7 @@ class PlanListTableViewController: UITableViewController {
 
    let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PlanCardTVCell
 
-    
+    cell.locationField.numberOfLines = 0
     switch indexPath.section {
     case 0:
         let plan = plans[indexPath.section]
