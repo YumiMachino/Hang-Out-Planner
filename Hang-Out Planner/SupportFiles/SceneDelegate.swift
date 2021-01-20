@@ -19,7 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let scene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: scene)
     window?.makeKeyAndVisible()
-    let nv = UINavigationController(rootViewController: MainViewController())
+    
+    // TESTING SETTING HERE
+    let planListTVC = PlanListTableViewController(plans: Plan.samplePlans)
+    let nv = UINavigationController(rootViewController: planListTVC)
     window?.rootViewController = nv
   }
   

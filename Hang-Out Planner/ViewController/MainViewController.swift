@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
   var selectedCategories: [Categories] = []
   
   var goButton = GoButton()
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +28,12 @@ class MainViewController: UIViewController {
     view.addSubview(goButton)
     goButton.centerXYinSafeArea(view)
     goButton.addTarget(self, action: #selector(goButtonTapped), for: .touchUpInside)
+    
+    // TESTING
+//    print("sampleRoute: \(Route.sampleRoutes)" )
+//    print("samplePlan: \(Plan.samplePlans)" )
 
+    
   }
   
   //Action when goButton is tapped
